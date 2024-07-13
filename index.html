@@ -1,0 +1,294 @@
+<html>
+<head>
+    <base href="http://fashaabishamah.ma/">
+    <title>فضاء أبي شامة المغربي للأدب</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #f7f3e8;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+
+        header {
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .featured-content {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .featured-content h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .content-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-item h3 {
+            color: #2980b9;
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: left;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>فضاء أبي شامة المغربي للأدب</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="openModal('home')">الرئيسية</a></li>
+            <li><a href="#" onclick="openModal('poetry')">الشعر</a></li>
+            <li><a href="#" onclick="openModal('prose')">النثر</a></li>
+            <li><a href="#" onclick="openModal('criticism')">النقد الأدبي</a></li>
+            <li><a href="#" onclick="openModal('biography')">السيرة الذاتية</a></li>
+            <li><a href="#" onclick="openModal('contact')">اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="featured-content">
+            <h2>مختارات الأسبوع</h2>
+            <p>قصيدة "نفحات الأندلس" للشاعر أبي شامة المغربي، تأخذنا في رحلة عبر الزمن إلى عصر ازدهار الحضارة الإسلامية في الأندلس. تتميز هذه القصيدة بجمال الصور الشعرية وعمق المعاني التاريخية.</p>
+            <a href="#" onclick="openModal('weekly-selection')">اقرأ المزيد</a>
+        </section>
+
+        <div class="content-grid">
+            <article class="content-item">
+                <h3>الشعر</h3>
+                <p>استمتع بمجموعة متنوعة من القصائد الكلاسيكية والحديثة، من الغزل إلى الحماسة والرثاء.</p>
+                <a href="#" onclick="openModal('poetry-collection')">استكشف الشعر</a>
+            </article>
+
+            <article class="content-item">
+                <h3>النثر</h3>
+                <p>اكتشف روائع النثر العربي، من المقامات إلى القصص القصيرة والروايات المعاصرة.</p>
+                <a href="#" onclick="openModal('prose-works')">تصفح النثر</a>
+            </article>
+
+            <article class="content-item">
+                <h3>النقد الأدبي</h3>
+                <p>تعمق في تحليلات نقدية لأهم الأعمال الأدبية العربية والعالمية.</p>
+                <a href="#" onclick="openModal('literary-criticism')">اقرأ النقد</a>
+            </article>
+
+            <article class="content-item">
+                <h3>ورشة الكتابة</h3>
+                <p>شارك في ورشات الكتابة الإبداعية وتعلم تقنيات تحسين أسلوبك الأدبي.</p>
+                <a href="#" onclick="openModal('writing-workshop')">سجل الآن</a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2023 فضاء أبي شامة المغربي للأدب</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            var modal = document.getElementById("modal");
+            var modalTitle = document.getElementById("modal-title");
+            var modalContent = document.getElementById("modal-content");
+
+            modal.style.display = "block";
+
+            switch(id) {
+                case 'home':
+                    modalTitle.innerText = "الرئيسية";
+                    modalContent.innerHTML = "<p>مرحبًا بكم في فضاء أبي شامة المغربي للأدب، منصتكم الأدبية الشاملة التي تجمع بين روائع الأدب العربي القديم والحديث. استكشفوا معنا عالمًا من الإبداع والجمال اللغوي.</p>";
+                    break;
+                case 'poetry':
+                    modalTitle.innerText = "الشعر";
+                    modalContent.innerHTML = "<p>اكتشفوا روائع الشعر العربي عبر العصور، من المعلقات إلى قصائد الشعر الحر المعاصر. استمتعوا بتجربة قراءة فريدة مع شرح وتحليل لأبرز القصائد.</p><ul><li>الشعر الجاهلي</li><li>شعر العصر الإسلامي</li><li>الشعر الأندلسي</li><li>الشعر الحديث والمعاصر</li></ul>";
+                    break;
+                case 'prose':
+                    modalTitle.innerText = "النثر";
+                    modalContent.innerHTML = "<p>تصفحوا أروع ما جادت به قريحة الأدباء العرب في مجال النثر، من المقامات الكلاسيكية إلى الروايات الحديثة.</p><ul><li>المقامات</li><li>القصص القصيرة</li><li>الروايات</li><li>المقالات الأدبية</li></ul>";
+                    break;
+                case 'criticism':
+                    modalTitle.innerText = "النقد الأدبي";
+                    modalContent.innerHTML = "<p>تعمقوا في فهم الأعمال الأدبية من خلال تحليلات نقدية معمقة لكبار النقاد والأدباء. اكتشفوا الجوانب الفنية والفكرية في الأدب العربي والعالمي.</p><ul><li>نظريات النقد الأدبي</li><li>تحليل النصوص</li><li>دراسات مقارنة</li><li>مناهج النقد الحديثة</li></ul>";
+                    break;
+                case 'biography':
+                    modalTitle.innerText = "السيرة الذاتية";
+                    modalContent.innerHTML = "<p>تعرفوا على حياة وأعمال أبي شامة المغربي، الأديب والمفكر الذي ترك بصمة واضحة في الأدب العربي. اكتشفوا رحلته الأدبية ومساهماته في إثراء المكتبة العربية.</p><ul><li>نشأته وتعليمه</li><li>أهم أعماله الأدبية</li><li>تأثيره في الحركة الأدبية</li><li>إرثه الفكري والثقافي</li></ul>";
+                    break;
+                case 'contact':
+                    modalTitle.innerText = "اتصل بنا";
+                    modalContent.innerHTML = "<p>نحن نرحب بتواصلكم وآرائكم. يمكنكم الاتصال بنا عبر الوسائل التالية:</p><ul><li>البريد الإلكتروني: info@fashaabishamah.ma</li><li>الهاتف: +212 5XX-XXXXXX</li><li>العنوان: شارع محمد الخامس، الرباط، المغرب</li></ul><p>كما يمكنكم متابعتنا على مواقع التواصل الاجتماعي للاطلاع على آخر الأخبار والفعاليات الأدبية.</p>";
+                    break;
+                case 'weekly-selection':
+                    modalTitle.innerText = "نفحات الأندلس";
+                    modalContent.innerHTML = "<p>قصيدة 'نفحات الأندلس' للشاعر أبي شامة المغربي:</p><pre>يا روضةً في الأندلسِ الخضراءِ<br>عبقتْ بأريجِ التاريخِ والأدباءِ<br>كم من حضارةٍ على أرضكِ ازدهرتْ<br>وكم من شاعرٍ بجمالكِ تغنّى<br>قصورٌ شامخةٌ وحدائقُ غنّاءُ<br>تروي قصصَ المجدِ والعلياءِ<br>يا أندلسُ الحبِّ والشعرِ والفنونِ<br>ما زلتِ في القلبِ نبضَ الانتماءِ</pre><p>تأخذنا هذه القصيدة في رحلة عبر الزمن، مستحضرة عبق التاريخ وروعة الحضارة الإسلامية في الأندلس. يصور الشاعر جمال الطبيعة والعمارة، ويستذكر إسهامات العلماء والأدباء الذين أثروا هذه الحقبة الذهبية.</p>";
+                    break;
+                case 'poetry-collection':
+                    modalTitle.innerText = "مجموعة الشعر";
+                    modalContent.innerHTML = "<p>استمتعوا بمختارات من أجمل القصائد العربية:</p><ul><li>المعلقات السبع</li><li>قصائد المتنبي</li><li>ديوان ابن زيدون</li><li>شعر نزار قباني</li><li>قصائد محمود درويش</li></ul><p>كل قسم يحتوي على مجموعة منتقاة من القصائد مع شرح وتحليل لمعانيها وجمالياتها الفنية.</p>";
+                    break;
+                case 'prose-works':
+                    modalTitle.innerText = "أعمال النثر";
+                    modalContent.innerHTML = "<p>اكتشفوا مختارات من النثر العربي الكلاسيكي والمعاصر:</p><ul><li>المقامات</li><li>القصص القصيرة</li><li>الروايات</li><li>المقالات الأدبية</li></ul><p>كل قسم يحتوي على مختارات متميزة مع تحليل ودراسات نقدية.</p>";
+                    break;
+                case 'literary-criticism':
+                    modalTitle.innerText = "النقد الأدبي";
+                    modalContent.innerHTML = "<p>تعرفوا على أعمق التحليلات النقدية للنصوص الأدبية:</p><ul><li>نظريات النقد الأدبي</li><li>تحليل النصوص</li><li>دراسات مقارنة</li><li>مناهج النقد الحديثة</li></ul><p>كل قسم يحتوي على مقالات نقدية متخصصة ودراسات تحليلية.</p>";
+                    break;
+                case 'writing-workshop':
+                    modalTitle.innerText = "ورشة الكتابة";
+                    modalContent.innerHTML = "<p>شاركوا في ورشات الكتابة الإبداعية:</p><ul><li>تقنيات الكتابة الأدبية</li><li>أساليب تطوير الشخصيات</li><li>بناء الحبكة</li><li>تحليل النصوص الإبداعية</li></ul><p>ورشات عملية ومكثفة مع مجموعة من الأدباء والمحاضرين المتميزين.</p>";
+                    break;
+                default:
+                    modalTitle.innerText = "";
+                    modalContent.innerHTML = "";
+            }
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("modal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
